@@ -16,4 +16,5 @@ class CardCollectionViewCell: UICollectionViewCell {
         // Initialization code
     }
 
+    
 }

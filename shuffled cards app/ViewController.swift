@@ -138,6 +138,15 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
 }
 
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    // STIMATED_SIZE in collection view = NONE iOS
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        print("CollectionView CGSize")
+        let width = collectionView.frame.width / 4
+        return CGSize(width: width, height: width)
+    }
+}
+
 extension UIImageView {
     func load(url: URL) {
         DispatchQueue.global().async {
