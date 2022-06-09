@@ -87,6 +87,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Shuffled Cards App" id="WMa-WL-1tr"/>
+                    <connections>
+                        <outlet property="collectionView" destination="RTE-w1-kgg" id="ocd-FW-zMz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
