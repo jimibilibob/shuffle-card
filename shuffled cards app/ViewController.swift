@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 struct Card {
     public var code: String
@@ -75,6 +76,13 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         subView.load(url: url)
 
         subView.isUserInteractionEnabled = true
+        
+        UIView.animate(withDuration: 0.8, animations: {
+            subView.center = self.view.center
+            }) { _ in
+                subView.center = self.view.center
+        }
+
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
         subView.addGestureRecognizer(tap)
         
@@ -97,11 +105,11 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"
-        
+        SVProgressHUD.show()
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil,
                 let data = data else { return }
-            
+            SVProgressHUD.dismiss()
             do{
                 if let deckIdJson = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     guard let id = deckIdJson["deck_id"] as? String else { return }
@@ -132,9 +140,13 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
         request.httpMethod = "GET"
         
+        SVProgressHUD.show()
+        
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             guard error == nil,
                 let data = data else { return }
+            
+            SVProgressHUD.dismiss()
             do{
                 if let requestCardJson = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
                     self.cards.removeAll()
