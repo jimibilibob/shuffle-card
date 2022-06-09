@@ -21,6 +21,8 @@ class ViewController: UIViewController {
     
     var deckId = ""
     var cards: [Card] = []
+    var currentCard: Card?
+    var isShowing = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,8 +55,38 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // currentCard = characters[indexPath.row]
-        // TODO: Show card image performSegue(withIdentifier: "goToDetailViewController", sender: nil)
+        guard !isShowing else { return }
+        // let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"CardCollectionViewCell", for: indexPath) as? CardCollectionViewCell ?? CardCollectionViewCell()
+
+        currentCard = cards[indexPath.row]
+        
+        guard let card = currentCard else { return }
+        
+        guard let url = URL(string: card.image) else { return }
+        // cell.cardImageView.load(url: url)
+        
+        let width = self.view.frame.width / 2
+        let height = self.view.frame.height / 2
+        
+        // guard let subViewa = cell.cardImageView else { return }
+
+        let subView = UIImageView(frame: CGRect(x: width / 2, y: height / 2, width: width, height: width * 1.3))
+        
+        subView.load(url: url)
+
+        subView.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
+        subView.addGestureRecognizer(tap)
+        
+        self.view.addSubview(subView)
+        
+        isShowing = true
+        
+    }
+    
+    @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
+        sender.view?.removeFromSuperview()
+        isShowing = false
     }
     
     func getDeckId() {
