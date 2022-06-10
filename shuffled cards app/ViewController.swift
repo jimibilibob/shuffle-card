@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     var deckId = ""
     var cards: [CardsResponse.Card] = []
     var currentCard: CardsResponse.Card?
+    var subView: UIImageView!
     var isShowing = false
     
     override func viewDidLoad() {
@@ -62,17 +63,17 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let height = self.view.frame.height / 2
         
         // guard let subViewa = cell.cardImageView else { return }
-
-        let subView = UIImageView(frame: CGRect(x: width / 2, y: height / 2, width: width, height: width * 1.3))
+        
+        subView = UIImageView(frame: CGRect(x: width / 2, y: height * 2 , width: width, height: width * 1.3))
         
         subView.load(url: url)
 
         subView.isUserInteractionEnabled = true
         
         UIView.animate(withDuration: 0.8, animations: {
-            subView.center = self.view.center
+            self.subView.center = CGPoint(x: width , y: height )
             }) { _ in
-                subView.center = self.view.center
+                self.subView.center = CGPoint(x: width , y: height )
         }
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
@@ -101,8 +102,15 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
                     sender.view?.removeFromSuperview()
                     isShowing = false
                 case .right:
+                    /* UIView.animate(withDuration: 0.8, animations: {
+                        self.subView.center = CGPoint(x: self.view.frame.width * 3 , y: self.view.frame.height )
+                        }) { _ in
+                            self.subView.center = CGPoint(x: self.view.frame.width * 3 , y: self.view.frame.height )
+                            
+                    }*/
                     sender.view?.removeFromSuperview()
-                    isShowing = false
+                    self.isShowing = false
+                    print("SWIPE RIGHT")
                 case .down:
                     sender.view?.removeFromSuperview()
                     isShowing = false
