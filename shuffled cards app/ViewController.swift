@@ -8,21 +8,13 @@
 import UIKit
 import SVProgressHUD
 
-struct Card {
-    public var code: String
-    public var image: String
-    public var images: [String: String]
-    public var value: String
-    public var suit: String
-}
-
 class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
     var deckId = ""
-    var cards: [Card] = []
-    var currentCard: Card?
+    var cards: [CardsResponse.Card] = []
+    var currentCard: CardsResponse.Card?
     var isShowing = false
     
     override func viewDidLoad() {
@@ -102,33 +94,20 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
         guard let url = URL(string: urlString) else { return }
         
-        var request = URLRequest(url: url)
-        
-        request.httpMethod = "GET"
         SVProgressHUD.show()
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard error == nil,
-                let data = data else { return }
+        NetworkManager.shared.get(DeckIdResponse.self, from: url) { result in
+            
             SVProgressHUD.dismiss()
-            do{
-                if let deckIdJson = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    guard let id = deckIdJson["deck_id"] as? String else { return }
-                    self.deckId = id
-                }
-                
-                DispatchQueue.main.sync {
-                    print("Deck Id \(self.deckId)")
-                    self.getCards(deckId: self.deckId)
-                    print("Cards \(self.cards)")
-                    //self.collectionView.reloadData()
-                }
-                
-            } catch {
-                print("Error", error)
+            
+            switch result {
+            case .success(let deckIdResponse):
+                self.deckId = deckIdResponse.deck_id
+                print("Deck Id \(self.deckId)")
+                self.getCards(deckId: deckIdResponse.deck_id)
+            case .failure(let error):
+                print(error)
             }
         }
-        
-        task.resume()
     }
     
     func getCards(deckId: String) {
@@ -136,48 +115,21 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
         guard let url = URL(string: urlString) else { return }
         
-        var request = URLRequest(url: url)
-        
-        request.httpMethod = "GET"
-        
         SVProgressHUD.show()
         
-        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard error == nil,
-                let data = data else { return }
-            
+        NetworkManager.shared.get(CardsResponse.self, from: url) { result in
+                
             SVProgressHUD.dismiss()
-            do{
-                if let requestCardJson = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                    self.cards.removeAll()
-                    
-                    guard let cardsJson = requestCardJson["cards"] as? [[String: Any]] else { return }
-                    print("Card Data ----> \(cardsJson)")
-                    for cardDic in cardsJson {
-                        
-                        guard let code = cardDic["code"] as? String,
-                              let image = cardDic["image"] as? String,
-                              let images = cardDic["images"] as? [String: String],
-                              let value = cardDic["value"] as? String,
-                              let suit = cardDic["suit"] as? String else { continue }
-                        
-                        let card = Card(code: code, image: image, images: images, value: value, suit: suit)
-                        
-                        self.cards.append(card)
-                    }
-                }
-                
-                DispatchQueue.main.sync {
-                    
+            
+            switch result {
+                case .success(let cardsResponse):
+                    self.cards = cardsResponse.cards
                     self.collectionView.reloadData()
-                }
-                
-            } catch {
-                print("Error", error)
+                    print("Cards \(cardsResponse)")
+                case .failure(let error):
+                    print(error)
             }
         }
-        
-        task.resume()
     }
 
 }
