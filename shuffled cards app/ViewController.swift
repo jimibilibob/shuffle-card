@@ -77,6 +77,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
 
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
         subView.addGestureRecognizer(tap)
+        // Swipe gesture
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
+        swipeRight.direction = .right
+        subView.addGestureRecognizer(swipeRight)
         
         self.view.addSubview(subView)
         
@@ -87,6 +91,28 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
         sender.view?.removeFromSuperview()
         isShowing = false
+    }
+    
+    @objc func handleSwipeGesture(sender: UIGestureRecognizer) {
+        if let swipeGesture = sender as? UISwipeGestureRecognizer {
+            
+            switch swipeGesture.direction {
+                case .up:
+                    sender.view?.removeFromSuperview()
+                    isShowing = false
+                case .right:
+                    sender.view?.removeFromSuperview()
+                    isShowing = false
+                case .down:
+                    sender.view?.removeFromSuperview()
+                    isShowing = false
+                case .left:
+                    sender.view?.removeFromSuperview()
+                    isShowing = false
+            default:
+                return
+            }
+        }
     }
     
     func getDeckId() {
