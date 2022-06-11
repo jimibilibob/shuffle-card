@@ -50,19 +50,15 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard !isShowing else { return }
-        // let cell = collectionView.dequeueReusableCell(withReuseIdentifier:"CardCollectionViewCell", for: indexPath) as? CardCollectionViewCell ?? CardCollectionViewCell()
 
         currentCard = cards[indexPath.row]
         
         guard let card = currentCard else { return }
         
         guard let url = URL(string: card.image) else { return }
-        // cell.cardImageView.load(url: url)
         
         let width = self.view.frame.width / 2
         let height = self.view.frame.height / 2
-        
-        // guard let subViewa = cell.cardImageView else { return }
         
         subView = UIImageView(frame: CGRect(x: width / 2, y: height * 2 , width: width, height: width * 1.3))
         
@@ -75,51 +71,26 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
             }) { _ in
                 self.subView.center = CGPoint(x: width , y: height )
         }
-
-        let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
-        subView.addGestureRecognizer(tap)
-        // Swipe gesture
-        let swipeRight = UISwipeGestureRecognizer(target: self, action: #selector(handleSwipeGesture))
-        swipeRight.direction = .right
-        subView.addGestureRecognizer(swipeRight)
         
+        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlerDismissPan))
+        subView.addGestureRecognizer(pan)
+
         self.view.addSubview(subView)
         
         isShowing = true
         
     }
     
-    @objc func dismissFullscreenImage(_ sender: UITapGestureRecognizer) {
-        sender.view?.removeFromSuperview()
-        isShowing = false
-    }
+    @objc func handlerDismissPan(sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .changed:
+            UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 0, options: .curveEaseInOut, animations: { self.subView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height * 0.8) })
+        case .ended:
+            sender.view?.removeFromSuperview()
+            self.isShowing = false
     
-    @objc func handleSwipeGesture(sender: UIGestureRecognizer) {
-        if let swipeGesture = sender as? UISwipeGestureRecognizer {
-            
-            switch swipeGesture.direction {
-                case .up:
-                    sender.view?.removeFromSuperview()
-                    isShowing = false
-                case .right:
-                    /* UIView.animate(withDuration: 0.8, animations: {
-                        self.subView.center = CGPoint(x: self.view.frame.width * 3 , y: self.view.frame.height )
-                        }) { _ in
-                            self.subView.center = CGPoint(x: self.view.frame.width * 3 , y: self.view.frame.height )
-                            
-                    }*/
-                    sender.view?.removeFromSuperview()
-                    self.isShowing = false
-                    print("SWIPE RIGHT")
-                case .down:
-                    sender.view?.removeFromSuperview()
-                    isShowing = false
-                case .left:
-                    sender.view?.removeFromSuperview()
-                    isShowing = false
-            default:
-                return
-            }
+        default:
+            break
         }
     }
     
@@ -136,10 +107,14 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
             switch result {
             case .success(let deckIdResponse):
                 self.deckId = deckIdResponse.deck_id
-                print("Deck Id \(self.deckId)")
                 self.getCards(deckId: deckIdResponse.deck_id)
+
             case .failure(let error):
-                print(error)
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                    print("OK")
+                }))
             }
         }
     }
@@ -159,9 +134,12 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
                 case .success(let cardsResponse):
                     self.cards = cardsResponse.cards
                     self.collectionView.reloadData()
-                    print("Cards \(cardsResponse)")
                 case .failure(let error):
-                    print(error)
+                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                    
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                        print("OK")
+                    }))
             }
         }
     }
@@ -190,3 +168,4 @@ extension UIImageView {
         }
     }
 }
+
