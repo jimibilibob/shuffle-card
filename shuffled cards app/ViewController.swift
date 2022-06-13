@@ -72,8 +72,9 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
                 self.subView.center = CGPoint(x: width , y: height )
         }
         
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(handlerDismissPan))
-        subView.addGestureRecognizer(pan)
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handlerDismissTap))
+
+        subView.addGestureRecognizer(tap)
 
         self.view.addSubview(subView)
         
@@ -81,16 +82,10 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
     }
     
-    @objc func handlerDismissPan(sender: UIPanGestureRecognizer) {
-        switch sender.state {
-        case .changed:
-            UIView.animate(withDuration: 2, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 0, options: .curveEaseInOut, animations: { self.subView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height * 0.8) })
-        case .ended:
+    @objc func handlerDismissTap(sender: UITapGestureRecognizer) {
+        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 0, options: .curveEaseInOut, animations: { self.subView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height * 0.8) }) { _ in
             sender.view?.removeFromSuperview()
             self.isShowing = false
-    
-        default:
-            break
         }
     }
     
