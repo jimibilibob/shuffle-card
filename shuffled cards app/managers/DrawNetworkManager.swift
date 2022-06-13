@@ -7,16 +7,10 @@
 
 import Foundation
 
-let baseUrlString = "https://deckofcardsapi.com"
-
 class DrawNetworkManager {
-    static let shared = DrawNetworkManager(session: URLSession.shared)
+    static let shared = DrawNetworkManager()
     
-    let session: URLSession
-    
-    init(session: URLSession) {
-        self.session = session
-    }
+    let baseUrlString = "https://deckofcardsapi.com"
     
     func getDraw(deckId: String, completion: @escaping (Result<Draw, Error>) -> Void) -> Void {
         guard let url = URL(string: "\(baseUrlString)/api/deck/\(deckId)/draw/?count=52") else { return completion(.failure(DrawResponseError.invalidUrl)) }

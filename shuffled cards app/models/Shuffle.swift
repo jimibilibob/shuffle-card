@@ -18,3 +18,8 @@ struct Shuffle: Decodable {
         case deckId = "deck_id"
     }
 }
+
+enum ShuffleResponseError: Error {
+    case noData
+    case invalidUrl
+}

@@ -88,29 +88,18 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func getShuffle() {
-        let urlString = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
-        
-        guard let url = URL(string: urlString) else { return }
-        
         SVProgressHUD.show()
-        NetworkManager.shared.get(Shuffle.self, from: url) { result in
-            
+        ShuffleNetworkManager.shared.getShuffle(completion: { result in
             SVProgressHUD.dismiss()
             
             switch result {
-            case .success(let deckIdResponse):
-                self.getCards(deckId: deckIdResponse.deckId)
+                case .success(let shuffle):
+                    self.getCards(deckId: shuffle.deckId)
 
-            case .failure(let error):
-                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                    print("OK")
-                }))
-                
-                self.present(alert, animated: true, completion: nil)
+                case .failure(let error):
+                    self.showAlertError(error)
             }
-        }
+        }) 
     }
     
     func getCards(deckId: String) {
@@ -124,14 +113,18 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
                     self.cards = draw.cards
                     self.collectionView.reloadData()
                 case .failure(let error):
-                    let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-
-                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-                        print("OK")
-                    }))
-                    self.present(alert, animated: true, completion: nil)
+                    self.showAlertError(error)
             }
         }
+    }
+    
+    func showAlertError(_ error: Error) {
+        let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            print("OK")
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
