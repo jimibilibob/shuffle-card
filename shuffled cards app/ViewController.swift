@@ -14,7 +14,8 @@ class ViewController: UIViewController {
     
     var deckId = ""
     var cards: [CardsResponse.Card] = []
-    var currentCard: CardsResponse.Card?
+    var currentCard: CardsResponse.Card!
+    var currentCell: CardCollectionViewCell!
     var subView: UIImageView!
     var isShowing = false
     
@@ -44,25 +45,23 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         let card = cards[indexPath.row]
 
         guard let url = URL(string: card.image) else { return cell }
-        cell.cardImageView.load(url: url)
+        
+        cell.cardImageView.image = ImageManager.shared.loadFromUrl(url: url)
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard !isShowing else { return }
+        
+        currentCell = collectionView.cellForItem(at: indexPath) as? CardCollectionViewCell
+        guard let image = currentCell.cardImageView.image else { return }
 
-        currentCard = cards[indexPath.row]
-        
-        guard let card = currentCard else { return }
-        
-        guard let url = URL(string: card.image) else { return }
-        
         let width = self.view.frame.width / 2
         let height = self.view.frame.height / 2
         
         subView = UIImageView(frame: CGRect(x: width / 2, y: height * 2 , width: width, height: width * 1.3))
         
-        subView.load(url: url)
+        subView.image = image
 
         subView.isUserInteractionEnabled = true
         
@@ -83,7 +82,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     @objc func handlerDismissTap(sender: UITapGestureRecognizer) {
-        UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 2, initialSpringVelocity: 0, options: .curveEaseInOut, animations: { self.subView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height * 0.8) }) { _ in
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0, options: .curveEaseInOut, animations: { self.subView.transform = CGAffineTransform(translationX: 0, y: self.view.frame.height * 0.8) }) { _ in
             sender.view?.removeFromSuperview()
             self.isShowing = false
         }
@@ -147,20 +146,6 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         print("CollectionView CGSize")
         let width = collectionView.frame.width / 4
         return CGSize(width: width, height: width)
-    }
-}
-
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async {
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self.image = image
-                    }
-                }
-            }
-        }
     }
 }
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE045A9528577EC10056A084 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE045A9428577EC10056A084 /* ImageManager.swift */; };
 		CE72B8692852345E00338A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B8682852345E00338A6D /* AppDelegate.swift */; };
 		CE72B86B2852345E00338A6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B86A2852345E00338A6D /* SceneDelegate.swift */; };
 		CE72B86D2852345E00338A6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B86C2852345E00338A6D /* ViewController.swift */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		1D6D23921E6732C47E62C6DB /* Pods-shuffled cards app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffled cards app.debug.xcconfig"; path = "Target Support Files/Pods-shuffled cards app/Pods-shuffled cards app.debug.xcconfig"; sourceTree = "<group>"; };
 		473335B77C1173B44FE21BD0 /* Pods_shuffled_cards_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shuffled_cards_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE045A9428577EC10056A084 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		CE72B8652852345E00338A6D /* shuffled cards app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shuffled cards app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE72B8682852345E00338A6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE72B86A2852345E00338A6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				CEB9402828539270001222FE /* NetworkManager.swift */,
+				CE045A9428577EC10056A084 /* ImageManager.swift */,
 			);
 			path = managers;
 			sourceTree = "<group>";
@@ -249,6 +252,7 @@
 				CEB9402928539270001222FE /* NetworkManager.swift in Sources */,
 				CE72B881285236CA00338A6D /* CardCollectionViewCell.swift in Sources */,
 				CE72B86D2852345E00338A6D /* ViewController.swift in Sources */,
+				CE045A9528577EC10056A084 /* ImageManager.swift in Sources */,
 				CE72B8692852345E00338A6D /* AppDelegate.swift in Sources */,
 				CE72B86B2852345E00338A6D /* SceneDelegate.swift in Sources */,
 				CEB9402628538D95001222FE /* CardResponse.swift in Sources */,
