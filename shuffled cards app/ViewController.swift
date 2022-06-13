@@ -12,9 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var collectionView: UICollectionView!
     
-    var deckId = ""
-    var cards: [CardsResponse.Card] = []
-    var currentCard: CardsResponse.Card!
+    var cards: [Card] = []
+    var currentCard: Card!
     var currentCell: CardCollectionViewCell!
     var subView: UIImageView!
     var isShowing = false
@@ -30,7 +29,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func shuffleCards(_ sender: Any) {
-        getDeckId()
+        getShuffle()
     }
     
 }
@@ -88,20 +87,19 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         }
     }
     
-    func getDeckId() {
+    func getShuffle() {
         let urlString = "https://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1"
         
         guard let url = URL(string: urlString) else { return }
         
         SVProgressHUD.show()
-        NetworkManager.shared.get(DeckIdResponse.self, from: url) { result in
+        NetworkManager.shared.get(Shuffle.self, from: url) { result in
             
             SVProgressHUD.dismiss()
             
             switch result {
             case .success(let deckIdResponse):
-                self.deckId = deckIdResponse.deck_id
-                self.getCards(deckId: deckIdResponse.deck_id)
+                self.getCards(deckId: deckIdResponse.deckId)
 
             case .failure(let error):
                 let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
@@ -109,6 +107,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                     print("OK")
                 }))
+                
+                self.present(alert, animated: true, completion: nil)
             }
         }
     }
@@ -120,7 +120,7 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
         
         SVProgressHUD.show()
         
-        NetworkManager.shared.get(CardsResponse.self, from: url) { result in
+        NetworkManager.shared.get(Draw.self, from: url) { result in
                 
             SVProgressHUD.dismiss()
             
@@ -134,6 +134,8 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                         print("OK")
                     }))
+                self.present(alert, animated: true, completion: nil)
+                
             }
         }
     }

@@ -16,9 +16,9 @@
 		CE72B8752852345F00338A6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE72B8732852345F00338A6D /* LaunchScreen.storyboard */; };
 		CE72B881285236CA00338A6D /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B87F285236CA00338A6D /* CardCollectionViewCell.swift */; };
 		CE72B882285236CA00338A6D /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE72B880285236CA00338A6D /* CardCollectionViewCell.xib */; };
-		CEB9402628538D95001222FE /* CardResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9402528538D95001222FE /* CardResponse.swift */; };
+		CEB9402628538D95001222FE /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9402528538D95001222FE /* Draw.swift */; };
 		CEB9402928539270001222FE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9402828539270001222FE /* NetworkManager.swift */; };
-		CEB9402B285398C8001222FE /* DeckIdResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9402A285398C8001222FE /* DeckIdResponse.swift */; };
+		CEB9402B285398C8001222FE /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9402A285398C8001222FE /* Shuffle.swift */; };
 		D32554E52E5732DB649A632D /* Pods_shuffled_cards_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473335B77C1173B44FE21BD0 /* Pods_shuffled_cards_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,9 +36,9 @@
 		CE72B8762852345F00338A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE72B87F285236CA00338A6D /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
 		CE72B880285236CA00338A6D /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
-		CEB9402528538D95001222FE /* CardResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardResponse.swift; sourceTree = "<group>"; };
+		CEB9402528538D95001222FE /* Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
 		CEB9402828539270001222FE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		CEB9402A285398C8001222FE /* DeckIdResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckIdResponse.swift; sourceTree = "<group>"; };
+		CEB9402A285398C8001222FE /* Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
 		D18CF9D6B61DA5BDFBF28277 /* Pods-shuffled cards app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffled cards app.release.xcconfig"; path = "Target Support Files/Pods-shuffled cards app/Pods-shuffled cards app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -109,8 +109,8 @@
 		CEB9402428538D21001222FE /* models */ = {
 			isa = PBXGroup;
 			children = (
-				CEB9402528538D95001222FE /* CardResponse.swift */,
-				CEB9402A285398C8001222FE /* DeckIdResponse.swift */,
+				CEB9402528538D95001222FE /* Draw.swift */,
+				CEB9402A285398C8001222FE /* Shuffle.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -255,8 +255,8 @@
 				CE045A9528577EC10056A084 /* ImageManager.swift in Sources */,
 				CE72B8692852345E00338A6D /* AppDelegate.swift in Sources */,
 				CE72B86B2852345E00338A6D /* SceneDelegate.swift in Sources */,
-				CEB9402628538D95001222FE /* CardResponse.swift in Sources */,
-				CEB9402B285398C8001222FE /* DeckIdResponse.swift in Sources */,
+				CEB9402628538D95001222FE /* Draw.swift in Sources */,
+				CEB9402B285398C8001222FE /* Shuffle.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
