@@ -29,4 +29,7 @@ struct Images: Codable {
     let png: String
 }
 
-
+enum DrawResponseError: Error {
+    case noData
+    case invalidUrl
+}

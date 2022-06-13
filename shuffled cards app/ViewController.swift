@@ -114,28 +114,22 @@ extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     }
     
     func getCards(deckId: String) {
-        let urlString = "https://deckofcardsapi.com/api/deck/\(deckId)/draw/?count=52"
-        
-        guard let url = URL(string: urlString) else { return }
-        
         SVProgressHUD.show()
-        
-        NetworkManager.shared.get(Draw.self, from: url) { result in
-                
+
+        DrawNetworkManager.shared.getDraw(deckId: deckId) { result in
             SVProgressHUD.dismiss()
             
             switch result {
-                case .success(let cardsResponse):
-                    self.cards = cardsResponse.cards
+                case .success(let draw):
+                    self.cards = draw.cards
                     self.collectionView.reloadData()
                 case .failure(let error):
                     let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
-                    
+
                     alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
                         print("OK")
                     }))
-                self.present(alert, animated: true, completion: nil)
-                
+                    self.present(alert, animated: true, completion: nil)
             }
         }
     }
