@@ -1,0 +1,487 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CE045A9528577EC10056A084 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE045A9428577EC10056A084 /* ImageManager.swift */; };
+		CE045A972857F1780056A084 /* DrawNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE045A962857F1780056A084 /* DrawNetworkManager.swift */; };
+		CE045A992857FF480056A084 /* ShuffleNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE045A982857FF480056A084 /* ShuffleNetworkManager.swift */; };
+		CE72B8692852345E00338A6D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B8682852345E00338A6D /* AppDelegate.swift */; };
+		CE72B86B2852345E00338A6D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B86A2852345E00338A6D /* SceneDelegate.swift */; };
+		CE72B86D2852345E00338A6D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B86C2852345E00338A6D /* ViewController.swift */; };
+		CE72B8702852345E00338A6D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE72B86E2852345E00338A6D /* Main.storyboard */; };
+		CE72B8722852345F00338A6D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE72B8712852345F00338A6D /* Assets.xcassets */; };
+		CE72B8752852345F00338A6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE72B8732852345F00338A6D /* LaunchScreen.storyboard */; };
+		CE72B881285236CA00338A6D /* CardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE72B87F285236CA00338A6D /* CardCollectionViewCell.swift */; };
+		CE72B882285236CA00338A6D /* CardCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE72B880285236CA00338A6D /* CardCollectionViewCell.xib */; };
+		CEB9402628538D95001222FE /* Draw.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9402528538D95001222FE /* Draw.swift */; };
+		CEB9402928539270001222FE /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9402828539270001222FE /* NetworkManager.swift */; };
+		CEB9402B285398C8001222FE /* Shuffle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB9402A285398C8001222FE /* Shuffle.swift */; };
+		D32554E52E5732DB649A632D /* Pods_shuffled_cards_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 473335B77C1173B44FE21BD0 /* Pods_shuffled_cards_app.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1D6D23921E6732C47E62C6DB /* Pods-shuffled cards app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffled cards app.debug.xcconfig"; path = "Target Support Files/Pods-shuffled cards app/Pods-shuffled cards app.debug.xcconfig"; sourceTree = "<group>"; };
+		473335B77C1173B44FE21BD0 /* Pods_shuffled_cards_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_shuffled_cards_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE045A9428577EC10056A084 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		CE045A962857F1780056A084 /* DrawNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawNetworkManager.swift; sourceTree = "<group>"; };
+		CE045A982857FF480056A084 /* ShuffleNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleNetworkManager.swift; sourceTree = "<group>"; };
+		CE72B8652852345E00338A6D /* shuffled cards app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "shuffled cards app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE72B8682852345E00338A6D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		CE72B86A2852345E00338A6D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		CE72B86C2852345E00338A6D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CE72B86F2852345E00338A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		CE72B8712852345F00338A6D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CE72B8742852345F00338A6D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		CE72B8762852345F00338A6D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE72B87F285236CA00338A6D /* CardCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCollectionViewCell.swift; sourceTree = "<group>"; };
+		CE72B880285236CA00338A6D /* CardCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardCollectionViewCell.xib; sourceTree = "<group>"; };
+		CEB9402528538D95001222FE /* Draw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Draw.swift; sourceTree = "<group>"; };
+		CEB9402828539270001222FE /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CEB9402A285398C8001222FE /* Shuffle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shuffle.swift; sourceTree = "<group>"; };
+		D18CF9D6B61DA5BDFBF28277 /* Pods-shuffled cards app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-shuffled cards app.release.xcconfig"; path = "Target Support Files/Pods-shuffled cards app/Pods-shuffled cards app.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CE72B8622852345E00338A6D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D32554E52E5732DB649A632D /* Pods_shuffled_cards_app.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B06F0C4DD3CC42C94229B180 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				473335B77C1173B44FE21BD0 /* Pods_shuffled_cards_app.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CE72B85C2852345E00338A6D = {
+			isa = PBXGroup;
+			children = (
+				CE72B8672852345E00338A6D /* shuffled cards app */,
+				CE72B8662852345E00338A6D /* Products */,
+				D352CA1445E7496F98B8B233 /* Pods */,
+				B06F0C4DD3CC42C94229B180 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		CE72B8662852345E00338A6D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CE72B8652852345E00338A6D /* shuffled cards app.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CE72B8672852345E00338A6D /* shuffled cards app */ = {
+			isa = PBXGroup;
+			children = (
+				CEB9402728539261001222FE /* managers */,
+				CEB9402428538D21001222FE /* models */,
+				CE72B87C2852367E00338A6D /* cells */,
+				CE72B8682852345E00338A6D /* AppDelegate.swift */,
+				CE72B86A2852345E00338A6D /* SceneDelegate.swift */,
+				CE72B86C2852345E00338A6D /* ViewController.swift */,
+				CE72B86E2852345E00338A6D /* Main.storyboard */,
+				CE72B8712852345F00338A6D /* Assets.xcassets */,
+				CE72B8732852345F00338A6D /* LaunchScreen.storyboard */,
+				CE72B8762852345F00338A6D /* Info.plist */,
+			);
+			path = "shuffled cards app";
+			sourceTree = "<group>";
+		};
+		CE72B87C2852367E00338A6D /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				CE72B87F285236CA00338A6D /* CardCollectionViewCell.swift */,
+				CE72B880285236CA00338A6D /* CardCollectionViewCell.xib */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		CEB9402428538D21001222FE /* models */ = {
+			isa = PBXGroup;
+			children = (
+				CEB9402528538D95001222FE /* Draw.swift */,
+				CEB9402A285398C8001222FE /* Shuffle.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		CEB9402728539261001222FE /* managers */ = {
+			isa = PBXGroup;
+			children = (
+				CEB9402828539270001222FE /* NetworkManager.swift */,
+				CE045A9428577EC10056A084 /* ImageManager.swift */,
+				CE045A962857F1780056A084 /* DrawNetworkManager.swift */,
+				CE045A982857FF480056A084 /* ShuffleNetworkManager.swift */,
+			);
+			path = managers;
+			sourceTree = "<group>";
+		};
+		D352CA1445E7496F98B8B233 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D6D23921E6732C47E62C6DB /* Pods-shuffled cards app.debug.xcconfig */,
+				D18CF9D6B61DA5BDFBF28277 /* Pods-shuffled cards app.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CE72B8642852345E00338A6D /* shuffled cards app */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CE72B8792852345F00338A6D /* Build configuration list for PBXNativeTarget "shuffled cards app" */;
+			buildPhases = (
+				A554D08314E05F993ABF2542 /* [CP] Check Pods Manifest.lock */,
+				CE72B8612852345E00338A6D /* Sources */,
+				CE72B8622852345E00338A6D /* Frameworks */,
+				CE72B8632852345E00338A6D /* Resources */,
+				8D34D9B96A390F23A10915DA /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "shuffled cards app";
+			productName = "shuffled cards app";
+			productReference = CE72B8652852345E00338A6D /* shuffled cards app.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CE72B85D2852345E00338A6D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					CE72B8642852345E00338A6D = {
+						CreatedOnToolsVersion = 13.4;
+					};
+				};
+			};
+			buildConfigurationList = CE72B8602852345E00338A6D /* Build configuration list for PBXProject "shuffled cards app" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CE72B85C2852345E00338A6D;
+			productRefGroup = CE72B8662852345E00338A6D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CE72B8642852345E00338A6D /* shuffled cards app */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CE72B8632852345E00338A6D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE72B882285236CA00338A6D /* CardCollectionViewCell.xib in Resources */,
+				CE72B8752852345F00338A6D /* LaunchScreen.storyboard in Resources */,
+				CE72B8722852345F00338A6D /* Assets.xcassets in Resources */,
+				CE72B8702852345E00338A6D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8D34D9B96A390F23A10915DA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-shuffled cards app/Pods-shuffled cards app-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-shuffled cards app/Pods-shuffled cards app-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-shuffled cards app/Pods-shuffled cards app-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A554D08314E05F993ABF2542 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-shuffled cards app-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CE72B8612852345E00338A6D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEB9402928539270001222FE /* NetworkManager.swift in Sources */,
+				CE72B881285236CA00338A6D /* CardCollectionViewCell.swift in Sources */,
+				CE045A992857FF480056A084 /* ShuffleNetworkManager.swift in Sources */,
+				CE72B86D2852345E00338A6D /* ViewController.swift in Sources */,
+				CE045A9528577EC10056A084 /* ImageManager.swift in Sources */,
+				CE72B8692852345E00338A6D /* AppDelegate.swift in Sources */,
+				CE72B86B2852345E00338A6D /* SceneDelegate.swift in Sources */,
+				CEB9402628538D95001222FE /* Draw.swift in Sources */,
+				CEB9402B285398C8001222FE /* Shuffle.swift in Sources */,
+				CE045A972857F1780056A084 /* DrawNetworkManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		CE72B86E2852345E00338A6D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE72B86F2852345E00338A6D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		CE72B8732852345F00338A6D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CE72B8742852345F00338A6D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CE72B8772852345F00338A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		CE72B8782852345F00338A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CE72B87A2852345F00338A6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D6D23921E6732C47E62C6DB /* Pods-shuffled cards app.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "shuffled cards app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ioan.shuffled-cards-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CE72B87B2852345F00338A6D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D18CF9D6B61DA5BDFBF28277 /* Pods-shuffled cards app.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "shuffled cards app/Info.plist";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ioan.shuffled-cards-app";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CE72B8602852345E00338A6D /* Build configuration list for PBXProject "shuffled cards app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE72B8772852345F00338A6D /* Debug */,
+				CE72B8782852345F00338A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CE72B8792852345F00338A6D /* Build configuration list for PBXNativeTarget "shuffled cards app" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CE72B87A2852345F00338A6D /* Debug */,
+				CE72B87B2852345F00338A6D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CE72B85D2852345E00338A6D /* Project object */;
+}

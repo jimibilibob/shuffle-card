@@ -1,0 +1,6 @@
+framework module Pods_shuffled_cards_app {
+  umbrella header "Pods-shuffled cards app-umbrella.h"
+
+  export *
+  module * { export * }
+}
